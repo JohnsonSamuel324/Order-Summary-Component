@@ -13,15 +13,28 @@ body {
     background-color: hsl(225, 100%, 94%);
 }
 
+#background-wave {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+}
+
 .summary-card {
-    display: flex;
-    flex-direction: column;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 1.25rem;
-    width: 90%;
     background-color: #ffffff;
     border-radius: 24px;
+}
+
+.order-plan, #btn-proceed {
+    margin: 0 1.5rem;
 }
 
 #summary-img {
@@ -38,7 +51,8 @@ body {
 #summary-desc {
     text-align: center;
     color: #8e8f9e;
-    width: 80%;
+    width: 85%;
+    margin: 0 auto;
 }
 
 .order-plan {
@@ -46,7 +60,6 @@ body {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    width: 80%;
     background-color: #f7f9fe;
     padding: 1rem;
     border-radius: 12px;
@@ -85,8 +98,7 @@ button {
 #btn-proceed {
     background-color: hsl(245, 75%, 52%);
     color: #ffffff;
-    width: 80%;
-    padding: 1rem;
+    padding: .75rem;
     border-radius: 12px;
     font-weight: bold;
     font-size: 14px;
@@ -108,4 +120,44 @@ button {
 }
 .attribution a { 
     color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1024px) {
+    #background-wave {
+        opacity: 1;
+    }
+    .summary-card {
+        width: 35%;
+    }
+    #summary-img {
+        margin-bottom: 1rem;
+    }
+    .order-plan {
+        margin-bottom: .5rem;
+    }
+    #btn-change:hover {
+        cursor: pointer;
+        color: #7e75ce;
+        text-decoration: none;
+    }
+    #btn-proceed:hover {
+        cursor: pointer;
+        background-color: #766cf1;
+    }
+    #btn-cancel:hover {
+        cursor: pointer;
+        color: #2c334a;
+    }
+}
+
+@media (min-width: 1440px) {
+    .summary-card {
+        width: 20%;
+    }
+}
+
+@media (min-width: 2560px) {
+    .summary-card {
+        width: 15%;
+    }
 }
